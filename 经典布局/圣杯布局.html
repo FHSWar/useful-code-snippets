@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>144-圣杯布局</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.left,
+		.right {
+			width: 200px;
+			height: 200px;
+			background: red;
+			float: left;
+		}
+
+		.center {
+			width: 100%;
+			height: 200px;
+			background: skyblue;
+			float: left;
+		}
+
+		.box {
+			/* 1. 这个没有浮动; 2. 块级元素默认占满一行 */
+			min-width: 400px;
+			padding: 0 200px;
+			background: purple;
+			overflow: hidden;
+		}
+
+		.left {
+			margin-left: -100%;
+			position: relative;
+			left: -200px;
+		}
+
+		.right {
+			margin-left: -200px;
+			position: relative;
+			left: 200px;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- 中左右是同一个爸爸的儿子 -->
+	<div class="box">
+		<div class="center">
+			中间的内容中间的内容中间的内容中间的内容中间的内容中间的内容中间的内容中间的内容
+			中间的内容中间的内容中间的内容中间的内容中间的内容中间的内容中间的内容中间的内容
+			中间的内容中间的内容中间的内容中间的内容中间的内容中间的内容中间的内容中间的内容
+		</div>
+		<div class="left"></div>
+		<div class="right"></div>
+	</div>
+</body>
+
+</html>

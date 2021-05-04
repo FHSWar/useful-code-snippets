@@ -1,0 +1,44 @@
+<!--
+ * @Author: FHSWar
+ * @Date: 2021-04-23 18:42:44
+ * @Last Edit Time: Do not edit
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body {
+			width: 100%;
+			height: 100%;
+			background-color: grey;
+		}
+
+		.father {
+			display: flex;
+			width: 200px;
+			height: 200px;
+			background-color: skyblue;
+		}
+
+		.son {
+			width: 100px;
+			height: 100px;
+			margin: auto;
+			/* justify-content: center; 这个不行, 原理不懂*/
+			align-self: center;
+			background-color: pink;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+</body>
+
+</html>

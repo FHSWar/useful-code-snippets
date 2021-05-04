@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="test1028.css">
+    <style>
+        div {
+        position: relative;
+        margin: 0 auto;
+        width: 200px;
+        height: 200px;
+        background-color: #ccc;
+        }
+        div:after { /* 伪元素还蛮好用的 */
+        content: "";
+        width: 50%;
+        height: 4px;
+        border-radius: 2px;
+        background-color: #fddb00;
+        position: absolute;
+        bottom: 0;
+        left: 25%;
+        /* z-index: 2; */
+        }
+    </style>
+</head>
+<body>
+    <div></div>    
+</body>
+</html>

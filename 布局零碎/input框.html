@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>input中加入图片的做法</title>
+    <!-- 这里图片用的是base64的做法，避免大家在使用我的demo的时候没有对应的图标 -->
+    <style>
+      .username {
+        width: 130px;
+        background: #ffffff
+          url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANfSURBVDhPRZRNaFxlFIa7dSuICzcuXERRKkh37uxGUGNB3KSCUqUIkaItVtDQpqUMlSYWUxo1qaYGbTRg1VItjS6sNGjF1CZVM5m/O/fOvfN77/xl/jPz+H63URcfd7jzneec85733B12pYdd6WCV2uQ2IZarkql2sfwmjt4ni5vE8zWSpQZufYt0uUu80MDTXac6IB0MCCGOgtJ+B682wC63cWs9Kn3wFKR71CEEGFCxA5laX6BWCMpUuQMJK1HmfwHXV2O8dWKCN45EGN77MhMffUpJweZ/U4Xfg5TfDStxKtsQU7ZX6ep0iNp5JqdnmZo5x9iJCC+8sp8HHt7J+zNz+C3YyFZwq32soKfWTHtb/0OygTTx61z9YYmRvc9zbuY9Dh7Yx57hJxgaup+hhx7k99W/yOquLf1M+5mKIEHLQPohxC012ZIOiY01Rp7bzcjwLg68tJtDrz7NY4/cyz1338VP15fJVnthK56EMtUY3f6DOBItXygReFHcP5fI/nGB4to8zsp5jh58lkd33kfctYipJ6sB6750kR5Ouc8O05MdiBx0qNVbFJ11Ujcv00kvEf35DCtLpzk/fYiFL6bJ1sskNMkNTeVvA9FkksE2xPSXE8hxipRyLpcW57i1/C3rK5f55dqXnJka5+J3X1Fod1gvNFWF/NGEeM2ABAlVFiSZq4Xq/3Y7yuznC4ydjDDx4TRjp06y//BhjkxOcSPmEC22SFYGOkouXRIVCWsqSZY7xOsdVssNJr++ym35YP5WmncWf+TYxWvMLUc5+sk3jH+wQGHLeKQpJ9flqS6poHEHkpJHYuUmlqYzevpjTn1/g0vugM9iLWZvlnj3yiqPv/gmb5+9gCNRjTGz0iajpJYvSDidcg9Xfs6VYXktw/jZRfa8dpynRo/zzOsRnhw9RmT+Cr9aNby2xJR9XcWYcduyRggxL9xci3ypR0li5ZXN0QQS+h03fUurlIS09UwqUVz3XE3GK8v20jOEGNeapTLaWHJgWr06mxJOz4TeJZQkITE3tDTGG7bglt8nVVScv202o4lVU1BjgFXXqqtPs7Hmk2CsbT4TZoopk1mVmWOropwq1rC2faJvREK7Y46BesqkPVOWAZniQHsFvtrzFJgsaCLSL4TK/omgzT+uj/fDrpBPrwAAAABJRU5ErkJggg==")
+          2px 2px no-repeat;
+        padding-left: 18px;
+        border: #e7ad01 1px solid;
+        font-size: 13px;
+        color: #000000;
+        height: 20px;
+      }
+      .password {
+        width: 130px;
+        background: #ffffff
+          url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALiSURBVDhPNVNLaxNRGO2fceNKf4AUxIWCuFIKoiAIiig+QN2UVhcGRKsUrNgWpS0+aG1tUWq11lrUim+tpC/TzGQmM5nJcyZJk0wnk8nx3Fu7uDDJd+8533fO+Vp0pwkt34DhhjCLDZjOBoyCx+MjVwG0XAg1EyCe8ZFab/I0kHQ3YJWbSKR9tGiFEIlcgFQJSDp1fnuyKADFY5sgRhHIeqwXA6j5KjI18H4IIx9uAqTKvFRqwiyHUHI1xHlbJ2As08Cq3cBalmAE0csNqK6HNAHUvCdJN0cQXRTqfNSExWKSrMl1XuIj2wcUF1hiwaiSqMJxS3VJZJFYAgj2FIvL6QpUdvF+JYVI/zN09oxiZG4FCi+aHEGlRopT4yj/9RAASaIni+zApYBkXyPY2chd7Nh3FPtPXMGeI5fRO/4JJjuJUwO9EsCusmvHl51LAM0JNgE2gOdfltF6+DQezi0iTtZL3aNobTsHVbTP37FCBUbZh04npAaC3eLMMQqXDoCe8Vls230Qk4s53JuK4vrjj2i7cANxtrua87HmVGF5TdmFQmslgJr3YRIkSn8GZr7iD5HHftnoHHiHmZiP2yPzuPnoNVIkUIoedajKDkyKLAGMEsNBhs9KFg/efIMGIDI8j13HrmLog4G+V1FEBl/CDkUXZdodyCPy06JzdjVbA8EwH0tjcPY3ljhr++Asth84j74ZFR33p9HZOwGNIgsRhY0GnbBptQQQEU6uh1igGLeevsXYQhqnuiews60d14Z/4NDFO+if/C4BhI0CQMTZoAESQMRSdX0YdWBqycbJric43jWGQx1D2HumG+3900iIQJHRrIZYtVxY3InsVgdiB7RSgL/8VmjlMplGf6bxIlqmiB60BlgTFjIHjLMQUHf4P5dQJlGCCDeYh7hDTeiCLiJNLXS6E+diiRSKrIiF2jrinQzSFoBIl1iSRIHz0Rkxq0amRKEmj6jrLneGRybRCfAPXa6W+aBnyAcAAAAASUVORK5CYII=")
+          2px 2px no-repeat;
+        padding-left: 18px;
+        border: #e7ad01 1px solid;
+        font-size: 13px;
+        color: #000000;
+        height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 做法的原理其实很简单：
+			1. 就是给input添加一个背景图片
+			2. 背景图片不要平铺，设置padding-left的值为背景图片的宽度
+		-->
+    <input
+      class="username"
+      onMouseOver="this.style.borderColor='#99E300'"
+      onMouseOut="this.style.borderColor='#A1BCA3'"
+      maxlength="12"
+      name="UserName"
+    />
+    <input
+      class="password"
+      onMouseOver="this.style.borderColor='#99E300'"
+      onMouseOut="this.style.borderColor='#A1BCA3'"
+      maxlength="12"
+      name="password"
+    />
+    <!-- 涛哥伪专家
+			欢迎大家关注我的博客，如有疑问，请加qq群：454796847、135430763 共同进步
+        -->
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!--
+ * @Author: FHSWar
+ * @Date: 2021-04-30 11:01:15
+ * @Last Edit Time: Do not edit
+-->
+<html>
+
+<head>
+  <script type="text/javascript">
+    let data = 1;
+
+    function show_coords(event) {
+      x = event.clientX;
+      y = event.clientY;
+      console.log("X 坐标: " + x + ", Y 坐标: " + y);
+
+      let createDot = document.createElement("div");
+      createDot.className = "dot";
+      createDot.style.top = y + "px";
+      createDot.style.left = x + "px";
+      document.body.appendChild(createDot);
+      data++;
+      let box = (document.querySelector(".box").innerHTML = data);
+    }
+  </script>
+  <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background: blue;
+      font-size: 50px;
+      color: white;
+    }
+  </style>
+</head>
+
+<body onmousedown="show_coords(event)">
+  <div class="box">1</div>
+
+  <img
+    src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fphoto.mac69.com%2F180516%2FEPS180516_8%2FNkYe6hZM9v_small.jpg&refer=http%3A%2F%2Fphoto.mac69.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1622340089&t=f5341ed8128af030d1a67d0b4818a48a.jpg"
+    alt="" />
+  <div class="dot"></div>
+</body>
+
+</html>
