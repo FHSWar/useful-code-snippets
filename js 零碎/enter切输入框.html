@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<input type="text" placeholder="账号">
+<input type="text" placeholder="姓名">
+<input type="text" placeholder="密码">
+<input type="submit" value="提交">
+
+<script>
+	window.onload = function () {
+		//获取所有的input
+		let inputGroup = document.getElementsByTagName("input");
+		//将元素遍历出来
+		let inputGroupArr = Array.from(inputGroup);
+		//监听键盘事件
+		document.onkeypress = function (e) {
+			let eve = event || e;
+			//找出每一个input的索引
+			let index = inputGroupArr.indexOf(eve.srcElement);
+			if (eve.keyCode == 13 || eve.which == 13) {
+				if (index === inputGroupArr.length - 1) {
+					alert('点击了提交事件, 另外做处理')
+				} else {
+					//如果按下的是 enter 那么则让遍历出来的元素 focus 即可
+					inputGroup[index + 1].focus();
+				}
+				//清除enter的默认行为
+				eve.preventDefault();
+			}
+		}
+	}
+</script>
+</body>
+</html>

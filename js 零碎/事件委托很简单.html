@@ -1,0 +1,48 @@
+<!--
+ * @Author: FHSWar
+ * @Date: 2021-05-23 10:25:15
+ * @Last Edit Time: Do not edit
+-->
+<!-- 这是事件委托, 事件委托就是父节点监听子节点的冒泡 -->
+<ul id="color-list">
+    <li>red</li>
+    <li>yellow</li>
+    <li>blue</li>
+    <li>green</li>
+    <li>black</li>
+    <li>white</li>
+  </ul>
+  <script>
+    (function () {
+      var color_list = document.getElementById('color-list');
+      color_list.addEventListener('click', showColor, true);
+      function showColor(e) {
+        var x = e.target;
+        if (x.nodeName.toLowerCase() === 'li') {
+          alert(x.innerHTML);
+        }
+      }
+    })();
+  </script>
+<!-- 这是绑定事件到自己上面 -->
+<!-- <ul id="color-list">
+    <li>red</li>
+    <li>yellow</li>
+    <li>blue</li>
+    <li>green</li>
+    <li>black</li>
+    <li>white</li>
+  </ul>
+  <script>
+    (function () {
+      var color_list = document.querySelectorAll('li')
+      console.log("color_list", color_list)
+      for (let item of color_list) {
+        item.onclick = showColor;
+      }
+      function showColor(e) {
+        alert(e.target.innerHTML)
+        console.log("showColor -> e.target", e.target.innerHTML)
+      }
+    })();
+  </script> -->

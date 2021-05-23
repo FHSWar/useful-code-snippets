@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="box">
+      <ul>
+        <li>松下</li>
+        <li>松下</li>
+        <li>松下</li>
+        <li>松下</li>
+        <li>松下</li>
+        <li>松下</li>
+        <li>松下</li>
+        <li>松下</li>
+        <li>松下</li>
+        <li>松下</li>
+        <li>松下</li>
+        <li>松下</li>
+        <li>松下</li>
+        <li>松下</li>
+        <li>松下</li>
+      </ul>
+    </div>
+    <button id="btn">点击展开</button>
+  </body>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #box {
+      width: 200px;
+      height: 50px;
+      border: 1px solid #333;
+      overflow: hidden;
+      margin: 50px auto;
+      transition: all .5s;
+    }
+    ul {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+    li {
+      width: 33%;
+    }
+    #btn {
+      display: block;
+      margin: 100px auto;
+    }
+  </style>
+  <script>
+    let flag = false;
+    btn.onclick = () => {
+      if (flag) {
+        box.style.height = "50px";
+        flag = false;
+      } else {
+        box.style.height = "auto";
+        flag = true;
+      }
+    };
+  </script>
+</html>
