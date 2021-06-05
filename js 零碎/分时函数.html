@@ -1,0 +1,66 @@
+<!--
+ * @Author: FHSWar
+ * @Date: 2021-05-31 14:39:46
+ * @Last Edit Time: Do not edit
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		div{
+			display: inline-block;
+			width: 100px;
+			height: 100px;
+			margin: 10px;
+			background-color: grey;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		// 从这里扒拉的: https://baijiahao.baidu.com/s?id=1652899777148632428&wfr=spider&for=pc
+		const timeChunk = function(arr, fn, count){
+			let obj, t
+			const start = function(){
+				// count 传了超过数组长度肯定是不合适, 因为不应该让 fn 对 undefined 做事情
+				for(let i = 0; i< Math.min(count || 1, arr.length);i++){
+					// 头部推出一个元素 (五插三排之一, 会改变原数组), 对这个元素执行 fn
+					const obj = arr.shift()
+					fn(obj)
+				}
+			}
+			return function(){
+				// 返回一个闭包,作用是隔两百毫秒再对 count 个元素执行 fn
+				t = setInterval(function(){
+					if(arr.length === 0){
+						return clearInterval(t)
+					}
+					start()
+				},200)
+			}
+		}
+		const arr = []
+		for(let i = 1;i<=2000;i++){
+			arr.push(i)
+		}
+		const renderFriendListAsync = timeChunk(arr, function(n){
+			const div = document.createElement('div')
+			div.innerHTML = n
+			document.body.appendChild(div)
+		}, 10)
+		// renderFriendListAsync()
+		function renderFriendListSync(n){ // 嘶，这个居然也很丝滑
+			for(const item of arr){
+				const div = document.createElement('div')
+				div.innerHTML = item
+				document.body.appendChild(div)
+			}
+		}
+		renderFriendListSync()
+	</script>
+</body>
+</html>
