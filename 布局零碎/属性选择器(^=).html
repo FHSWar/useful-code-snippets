@@ -1,0 +1,29 @@
+<!--
+ * @Author: FHSWar
+ * @Date: 2021-07-28 19:41:29
+ * @Last Edit Time: Do not edit
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div[x-placement^="top"] {
+        color: blue;
+      }
+      div[烂七八糟^="pot"] {
+        color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <div x-placement="top">我是 top 类, 我蓝了</div>
+    <div x-placement="top-direction">我是 top-direction 类, 我也蓝了</div>
+    <div x-placement="direction-top">我是 direction-top 类, 我蓝不了</div>
+    <div x-placement="pot">我是 pot 类, 我蓝不了</div>
+    <div 烂七八糟="pot">我是 pot 类, 我这都能紫</div>
+  </body>
+</html>

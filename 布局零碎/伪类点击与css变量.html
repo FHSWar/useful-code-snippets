@@ -1,0 +1,72 @@
+<!--
+ * @Author: FHSWar
+ * @Date: 2021-07-30 19:29:30
+ * @Last Edit Time: Do not edit
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --color: skyblue;
+      }
+      html,
+      body {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .wrapper {
+        position: relative;
+      }
+      #square {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background-color: #f1f3f4;
+      }
+      #square:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -50px;
+        width: 50px;
+        height: 50px;
+        border-radius: 2px;
+        background-color: var(--color);
+      }
+      div[role="layout"] {
+        position: absolute;
+        top: 0;
+        width: 200px;
+        height: 200px;
+        background-color: transparent;
+        z-index: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="square"></div>
+      <!-- 去掉 layout 块就会使灰色块也响应点击 -->
+      <div role="layout"></div>
+      <button>点我换伪类色</button>
+    </div>
+    <script>
+      const $square = document.getElementById("square");
+      $square.addEventListener("click", () => {
+        console.log("我被点了，事件绑在 #square 上。");
+      });
+      const $button = document.querySelector("button");
+      $button.addEventListener("click", () => {
+        $square.style.setProperty("--color", "darkseagreen");
+      });
+    </script>
+  </body>
+</html>

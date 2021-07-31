@@ -1,0 +1,58 @@
+<!--
+ * @Author: FHSWar
+ * @Date: 2021-06-13 11:01:09
+ * @Last Edit Time: Do not edit
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>后台管理 Layout</title>
+    <style>
+      /* 骨架样式 */
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        color: white;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        height: 50px;
+        background-color: red;
+      }
+      main {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        background-color: green;
+      }
+      main > .side-bar {
+        /* 考虑过用 vw，但想到实际中 side-bar 都是定宽的，这里还是写死好了 */
+        width: 200px;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <header>我是头部</header>
+    <main>
+      <div class="side-bar">
+        <ul>
+          <li>菜单一</li>
+          <li>菜单二</li>
+          <li>菜单三</li>
+          <li>菜单四</li>
+          <li>菜单五</li>
+        </ul>
+      </div>
+      <div class="content-body">我是主体内容</div>
+    </main>
+  </body>
+</html>
