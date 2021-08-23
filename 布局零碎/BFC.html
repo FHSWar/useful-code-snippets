@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		/* float 和 overflow: hidden 都能做到 contain internal floats, 写死高度就不行 */
+		.one {
+			/* float: left; */
+			overflow: hidden;
+			margin: 100px;
+			width: 1000px;
+			/* height: 300px; */
+			background-color: grey;
+		}
+
+		/* overflow: hidden 不行, float 可以解决上下边距塌陷的问题, 但这样布局代价好大 */
+		.one>div {
+			float: left;
+			margin: 50px;
+			width: 50px;
+			height: 50px;
+			background-color: red;
+		}
+	</style>
+</head>
+
+<body>
+	<!--
+		element that establishes a new block formatting context will:
+			- contain internal floats.
+			- exclude external floats.
+			- suppress margin collapsing.
+	-->
+	<div class="one">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+</body>
+
+
+</html>

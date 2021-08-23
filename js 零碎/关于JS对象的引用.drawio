@@ -1,0 +1,55 @@
+<mxfile host="65bd71144e">
+    <diagram id="mMFPuYFDtte_6v-99ycO" name="Page-1">
+        <mxGraphModel dx="929" dy="567" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="80" width="40" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="运行栈" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="75" y="60" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="160" y="80" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="堆内存" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="195" y="60" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="b: 1&lt;br&gt;c: 2" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="195" y="110" width="50" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="a&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="180" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="c: 2" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="195" y="150" width="50" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="" style="endArrow=classic;html=1;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" target="6" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="120" y="190" as="sourcePoint"/>
+                        <mxPoint x="190" y="130" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" value="写法1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="150" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="" style="endArrow=classic;html=1;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" target="9" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="120" y="190" as="sourcePoint"/>
+                        <mxPoint x="210" y="170" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="16" value="写法2" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="125" y="190" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="230" width="510" height="330" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="&lt;span class=&quot;md-plain md-expand&quot; style=&quot;box-sizing: border-box ; color: rgb(59 , 69 , 78) ; font-family: &amp;#34;roboto&amp;#34; , sans-serif ; font-size: 15.2px ; text-align: left ; background-color: rgb(255 , 255 , 255)&quot;&gt;引用值就是堆内存地址， 是存在于运行栈的值。&lt;/span&gt;&lt;span class=&quot;md-softbreak&quot; style=&quot;box-sizing: border-box ; color: rgb(59 , 69 , 78) ; font-family: &amp;#34;roboto&amp;#34; , sans-serif ; font-size: 15.2px ; text-align: left ; background-color: rgb(255 , 255 , 255)&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;span class=&quot;md-plain&quot; style=&quot;box-sizing: border-box ; color: rgb(59 , 69 , 78) ; font-family: &amp;#34;roboto&amp;#34; , sans-serif ; font-size: 15.2px ; text-align: left ; background-color: rgb(255 , 255 , 255)&quot;&gt;“引用值” 和 “对对象的引用” 是完全等价的。&lt;/span&gt;&lt;span class=&quot;md-softbreak&quot; style=&quot;box-sizing: border-box ; color: rgb(59 , 69 , 78) ; font-family: &amp;#34;roboto&amp;#34; , sans-serif ; font-size: 15.2px ; text-align: left ; background-color: rgb(255 , 255 , 255)&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;span class=&quot;md-plain md-expand&quot; style=&quot;box-sizing: border-box ; text-align: left ; background-color: rgb(255 , 255 , 255)&quot;&gt;&lt;font color=&quot;#3b454e&quot; face=&quot;Roboto, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 15.2px&quot;&gt;用简单例子标一下：&lt;/span&gt;&lt;/font&gt;&lt;br&gt;&lt;div&gt;&lt;font color=&quot;#3b454e&quot; face=&quot;Roboto, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 15.2px&quot;&gt;let a = {&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#3b454e&quot; face=&quot;Roboto, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 15.2px&quot;&gt;&lt;span&gt;&#9;&lt;/span&gt;b: 1&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#3b454e&quot; face=&quot;Roboto, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 15.2px&quot;&gt;}&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#3b454e&quot; face=&quot;Roboto, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 15.2px&quot;&gt;// 以下两种写法完全不同&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#3b454e&quot; face=&quot;Roboto, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 15.2px&quot;&gt;// 写法 1, 这种是在原有的 a 里面加东西，a 存的引用值没有改变&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#3b454e&quot; face=&quot;Roboto, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 15.2px&quot;&gt;a.c = 2&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#3b454e&quot; face=&quot;Roboto, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 15.2px&quot;&gt;console.log(a) // { b: 1, c: 2 }&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#3b454e&quot; face=&quot;Roboto, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 15.2px&quot;&gt;// 写法 2, 这种是给 a 换了一个新对象，a 存的引用值变了&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#3b454e&quot; face=&quot;Roboto, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 15.2px&quot;&gt;a = { c: 2 }&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#3b454e&quot; face=&quot;Roboto, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 15.2px&quot;&gt;console.log(a) // { c: 2 }&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;rotation=0;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="290" width="440" height="200" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
