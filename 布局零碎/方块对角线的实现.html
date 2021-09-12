@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.line {
+			border: 1px solid grey;
+			width: 100px;
+			height: 100px;
+			background: linear-gradient(
+				45deg, 
+				transparent 49.5%,
+				grey 49.5%,
+				transparent 50.5%
+			);
+		}
+
+		.line-two-wrapper{
+			position: relative;
+			margin-top: 10px;
+			border: 1px solid grey;
+			width: 100px;
+			height: 100px;
+		}
+		.line-two{
+			position: absolute;
+			top: 50%;
+			height: 1px;
+			/* 等边直角三角形的斜边长 */
+			width: 142px;
+			background-color: grey;
+			/* 先把线移到正中间，然后旋转 45deg */
+			transform: translateX(-20.5px) rotate(45deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="line" width="200px">
+	</div>
+
+	<div class="line-two-wrapper">
+		<div class="line-two"></div>
+	</div>
+</body>
+</html>
