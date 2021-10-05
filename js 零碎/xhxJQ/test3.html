@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+	<title>06-jQuery原型上的属性和方法</title>
+	<script src="xhxJQ.js"></script>
+	<script>
+		// let a = new Promise((resolve, reject) => {
+		// 	throw new Error("不对劲");
+		// });
+
+		// function wula() {
+		// 	return new Promise((resolve, reject) => {
+		// 		throw new Error("不对劲");
+		// 	});
+		// }
+		// wula();
+
+		// 这就不能得到想要的东西
+		// var res = $("div");
+		// console.log(res);
+		// console.log(res.eq());
+		// console.log(res.eq(0));
+		// console.log(res.eq(-1));
+		// console.log(res.eq(1));
+		// console.log(res.first());
+		// console.log(res.last());
+		$(function () {
+			// var res = $("div");
+			// console.log(res);
+			// console.log(res.eq());
+			// console.log(res.eq(0));
+			// console.log(res.eq(-1));
+			// console.log(res.eq(1));
+			// console.log(res.first());
+			// console.log(res.last());
+			/*
+				  jQ原型上的核心方法和属性：
+				  1、jquery 获取jQ版本号
+				  2、selector 实例默认的选择器取值
+				  3、length 实例默认的长度
+				  3、push 给实例添加新元素
+				  4、sort 对实例中的元素进行排序
+				  5、splice 按照指定下标指定数量删除元素，也可以替换删除的元素
+
+				  6、toArray 把实例转换为数组返回
+				  7、get  获取指定下标的元素，获取的是原生DOM
+
+				  6、eq 获取指定下标的元素，获取的是jQuery类型的实例对象
+				  7、first 获取实例中的第一个元素，是jQuery类型的实例对象
+				  8、last 获取实例中的最后一个元素，是jQuery类型的实例对象
+
+				  9、each 遍历实例，把遍历到的数据传给回调使用
+				  10、map  遍历实例，把遍历到的数据传给回调使用，然后把回调的返回值收集起来组成一个新的数组返回
+			  * */
+			// console.log($().jquery);
+			// var res = $("div");
+			// console.log(res);
+			// var res2 = res.toArray();
+			// console.log(res2);
+			// console.log(res.get(0));
+			// console.log(res.get(1));
+			// console.log(res.get(-1)); // (3 + -1) = 2
+			// console.log(res.get(-2)); // (3 + -2) = 1
+			/*
+				 var res = $("div");
+				 console.log(res);
+				 // get方法如果不传递参数, 相当于调用toArray()
+				 // console.log(res.get());
+				 // console.log(res.get(0));
+				 // console.log(res.get(1));
+				 console.log(res.get(-1)); // (3 + -1) = 2
+				 // console.log(res.get(-2)); // (3 + -2) = 1
+				 */
+			/*
+				 var res = $("div");
+				 // console.log(res.eq());
+				 // console.log(res.eq(0));
+				 // console.log(res.eq(-1));
+
+				 // console.log(res.first());
+				 console.log(res.last());
+				 */
+			/*
+				 var arr = [1, 3, 5, 7, 9];
+				 var obj1 = {0:"lnj",1:"333",2:"male",length:3};
+				 var obj2 = {"name":"lnj","age":"33"};
+
+				 njQuery.each(arr, function (key, value) {
+					 // if(key === 2){
+					 //     return false;
+					 // }
+					 // console.log(key, value);
+					 console.log(this);
+				 });
+				 // jQuery.each(arr, function (key, value) {
+				 //     // console.log(key, value);
+				 //     console.log(this);
+				 // });
+
+				 $(arr).each(function (key, value) {
+					 // console.log(key, value);
+					 console.log(this);
+				 // });
+				 */
+			// var arr = [1, 3, 5, 7, 9];
+			// var obj1 = { 0: "lnj", 1: "333", 2: "male", length: 3 };
+			// var obj2 = { name: "lnj", age: "33" };
+			// var res = njQuery.map(arr, function (value, key) {
+			// 	// console.log(value, key);
+			// 	if (key === 2) {
+			// 		return value;
+			// 	}
+			// });
+			// console.log(res);
+			// var arr = [1, 3, 5, 7, 9];
+			// var obj1 = { 0: "lnj", 1: "333", 2: "male", length: 3 };
+			// var obj2 = { name: "lnj", age: "33" };
+			// xhxQuery.each(arr, function (key, value) {
+			// 	// if(key === 2){
+			// 	//     return false;
+			// 	// }
+			// 	console.log(key, value);
+			// 	// console.log(this);
+			// });
+		});
+		/* // 确实不放在入口函数里也能行
+		var arr = [1, 3, 5, 7, 9];
+		var obj1 = { 0: "lnj", 1: "333", 2: "male", length: 3 };
+		var obj2 = { name: "lnj", age: "33" };
+		xhxQuery.each(arr, function (key, value) {
+			// if (key === 2) {
+			// 	return true;
+			// }
+			// console.log(key, value);
+			console.log(this);
+		}); */
+		var arr = [1, 3, 5, 7, 9];
+		var obj1 = { 0: "lnj", 1: "333", 2: "male", length: 3 };
+		const res = xhxQuery.map(arr, function (value, key) {
+			if (key === 2) {
+				return value;
+			}
+		})
+		console.log(res)
+	</script>
+</head>
+
+<body>
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<div id="box3"></div>
+</body>
+<!-- 这样就行 -->
+<!-- <script>
+		console.log($().jquery);
+		var res = $("div");
+		console.log(res);
+		var res2 = res.toArray();
+		console.log(res2);
+		console.log(res.get(0));
+		console.log(res.get(1));
+		console.log(res.get(-1)); // (3 + -1) = 2
+		console.log(res.get(-2)); // (3 + -2) = 1
+	</script> -->
+
+</html>

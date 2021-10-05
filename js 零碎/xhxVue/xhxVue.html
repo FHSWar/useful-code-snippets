@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<title>Document</title>
+	<script src="xhxVue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<input type="text" v-model="name">
+		<input type="text" v-model="desc.fascination">
+		<div v-html="a">111</div>
+		<div v-text="b">222</div>
+		<p>{{name}}</p>
+		<p>{{ age }}-{{desc.fascination}}</p>
+		<button v-on:click="myFn">芜湖</button>
+		<p>{{getName}}</p>
+	</div>
+	<script>
+		let vue = new xhxVue({
+			el: '#app',
+			data: {
+				name: "xhx", // 如果这里是 "xhx", 那么当我改了其他字符串再改回 "xhx", 将不会渲染到页面上, 怪哉
+				age: 22,
+				desc: {
+					fascination: 999
+				},
+				a: "<div>I am Groot</div>",
+				b: "<div>I am Groot</div>",
+			},
+			methods: {
+				myFn(){
+					// console.log("小伙子不错哟")
+					console.log(this.name);
+				}
+			},
+			computed: {
+				getName(){
+					return this.name + " - Muse";
+				}
+			}
+		})
+		// console.log(vue.$el);
+		// console.log(vue.$data);
+		// console.log(vue);
+	</script>
+</body>
+</html>
