@@ -22,9 +22,12 @@ function LinkedList() {
 	let head = null
 	this.append = function (element) {
 		let node = new Node(element), current
+		// head 为空说明该链表对象还没有节点
 		if (head === null) {
+			// 只要有一个插入，就有了 head
 			head = node
 		} else {
+			// 这个 while 牛, 这个到处用
 			current = head
 			while (current.next) { current = current.next }
 			current.next = node
@@ -55,6 +58,7 @@ function LinkedList() {
 			// 成功插入就返回 true
 			return true
 		} else {
+			// 不能隔着空位插入，JS 数组没这个限制
 			return false
 		}
 	}
@@ -75,7 +79,7 @@ function LinkedList() {
 		let index = this.indexOf(element)
 		console.log(index)
 		return this.removeAt(index)
-	}
+	} // 只移除找到的第一个
 	this.removeAt = function (position) {
 		// 检查越界值
 		if (position > -1 && position < length) {
@@ -113,7 +117,7 @@ function LinkedList() {
 		let current = head
 		string = ''
 		while (current) {
-			string += current.element + (current.next ? 'n' : '')
+			string += current.element + (current.next ? '-->' : '')
 			current = current.next
 		}
 		return string
@@ -128,8 +132,15 @@ list.append(15);
 list.append(10);
 list.append(5);
 list.append(0);
+list.append(0);
 list.append(-5);
 list.append(-10);
-const head = list.getHead()
-console.log(head)
-console.log(list.print())
+// console.log(list.insert(1,14))
+// console.log(list.indexOf(10))
+// console.log(list.remove(0))
+// console.log(list.removeAt(2))
+// console.log(list.isEmpty())
+// console.log(list.size())
+// console.log(list.getHead())
+// onsole.log(list.toString())
+// onsole.log(list.print())
