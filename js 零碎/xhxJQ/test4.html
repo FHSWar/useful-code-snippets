@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>14-jQueryDOM操作相关方法</title>
+	<script src="xhxJQ.js"></script>
+	<!--<script src="js/njQuery-1.2.0.js"></script>-->
+	<script>
+		$(function () {
+			/*
+			 DOM 操作:
+			 // 提示这两个方法内部需要用到nextSibling和previousSibling属性
+			 (作业)next([expr]) 获取紧邻的后面同辈元素的元素
+			 (作业)prev([expr]) 获取元素紧邻的前一个同辈元素
+			 // 提示: 实现insertAfter需要用到原生JavaScript的nextSibling属性
+			 (作业)元素.insertAfter.指定元素  ==>将元素添加到指定元素外部的后面
+			 (作业)指定元素.after.元素  ==>将元素添加到指定元素外部的后面
+
+			 元素.insertBefore.指定元素  ==>将元素添加到指定元素外部的前面
+			 (作业)指定元素.before.元素  ==>将元素添加到指定元素外部的前面
+
+			 13、元素.replaceAll.指定元素 ==> 替换所有指定元素
+			 (作业)指定元素.replaceWith.元素 ==> 替换所有指定元素
+
+			 15、clone ==> 复制节点(true深复制,false浅复制)
+			 */
+			var btn = document.getElementsByTagName("button")[0];
+			btn.onclick = function () {
+				// 接收一个字符串 $(".item"); ==> jQuery
+				$("p").replaceAll("li");
+
+				// 接收一个jQuery对象  $($("div")); ==> jQuery
+				// $("p").replaceAll($("li"));
+
+				// 接收一个DOM元素 $(divs);  ==> jQuery
+				// var divs = document.querySelectorAll("div");
+				// $("p").replaceAll(divs);
+
+				// console.log($("p").replaceAll("li"));
+			}
+			function replaceAll(source, target) {
+				// 1.将元素插入到指定元素的前面
+				$(source).insertBefore(target);
+				// 2.将指定元素删除
+				$(target).remove();
+			}
+			var p = document.querySelector("p");
+			var li = document.querySelector("li");
+			// replaceAll(p, li);
+		});
+	</script>
+</head>
+
+<body>
+	<button>调用replaceAll</button>
+	<p>我是段落</p>
+	<div class="item">
+		<li>1我是li</li>
+		<li>1我是li</li>
+		<li>1我是li</li>
+	</div>
+</body>
+
+</html>

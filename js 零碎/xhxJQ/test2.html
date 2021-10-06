@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>05-jQuery监听DOM加载</title>
+		<script src="xhxJQ.js"></script>
+		<script>
+			function xhx() {}
+			xhx.prototype = {
+				constructor: xhx,
+				init: function () {
+					return this === Mousse;
+				},
+			};
+			let Mousse = new xhx();
+			console.log(Mousse.init());
+			// $(function () {
+			// 	var res = document.querySelectorAll("div");
+			// 	console.log(res);
+			// });
+		</script>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>试试就试试</title>
+		<script src="xhxJQ.js"></script>
+		<script>
+			window.onload = function () {
+				// console.log($());
+				// console.log($(""));
+				// console.log($(null));
+				// console.log($(undefined));
+				// console.log($(NaN));
+				// console.log($(0));
+				// console.log($(false));
+				// // 2.传入html片段
+				// // 会将创建好的DOM元素存储到jQuery对象中返回
+				// console.log($("<p>1</p><p>2</p><p>3</p>"));
+				// console.log($("<div><p>1</p></div><div><p>2</p></div>"));
+				// console.log(
+				// 	$("    <div><p>1</p></div><div><p>2</p></div>    ")
+				// );
+				// // 3.传入选择器
+				// // 会将找到的所有元素存储到jQuery对象中返回
+				// console.log($("li"));
+				// console.log($(".item"));
+				let arr = [1, 2, 3, 4, 5, 6];
+				console.log($(arr));
+				let arrLike = { 0: "lnj", 1: "33", 2: "male", length: 3 };
+				console.log($(arrLike));
+			};
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li class="item">wula!</li>
+			<li class="item"></li>
+			<li class="item"></li>
+		</ul>
+	</body>
+</html>

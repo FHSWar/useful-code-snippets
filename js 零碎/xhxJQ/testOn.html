@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>25-jQuery事件操作相关方法</title>
+	<script src="xhxJQ.js"></script>
+	<script>
+		$(function () {
+			/*
+				1.on(type, callback): 注册事件
+				2.off(type, callback): 移出事件
+			*/
+			/*
+			1.注册多个相同类型事件, 后注册的不会覆盖先注册的
+			2.注册多个不同类型事件, 后注册的不会覆盖先注册的
+			*/
+
+			$("button").on("click", function () {
+				alert("hello click1");
+			});
+
+			$("button").on("click", function () {
+				alert("hello click2");
+			});
+
+			$("button").on("mouseenter", function () {
+				alert("hello mouseenter");
+			});
+
+			$("button").on("mouseleave", function () {
+				alert("hello mouseleave");
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<button>我是按钮1</button>
+	<button>我是按钮2</button>
+</body>
+
+</html>
