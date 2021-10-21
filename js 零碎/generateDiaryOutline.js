@@ -7,7 +7,7 @@ const generateDiaryOutline = (year, path) => { createYearFolder(year, path) }
     year: 指定年份，生成对应年份的日记框子
     path: 指定路径，指定文件夹生成到对应路径
 */
-generateDiaryOutline(2021)
+generateDiaryOutline(2022)
 
 // 创建年份文件夹，输入了年份就用指定的年份，没有就用当年
 function createYearFolder(year = new Date().getFullYear(), path) {
@@ -15,7 +15,7 @@ function createYearFolder(year = new Date().getFullYear(), path) {
   if (path) {
     yearFolderPath = `${path}/${year}`
   } else {
-    yearFolderPath = `/Users/fhs_war/Nutstore Files/fhs-md-lib/${year}`
+    yearFolderPath = `/Users/fhs_war/Nutstore Files/fhs-md-lib/学习日记/${year}`
   }
   // 如果原来没有，就创建文件夹，如果原来有，中断该程序
   try {

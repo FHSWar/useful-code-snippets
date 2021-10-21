@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端项目引入系统没有的字体</title>
+    <!-- 优化网络请求的，不加也能用
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     -->
+    <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: rampart-one;
+            src: url(fonts/RampartOne-Regular.ttf);
+        }
+
+        /* 这是通过网络获得的字体 */
+        h2:first-of-type,
+        div:first-of-type {
+            font-family: Festive; /* 加不加引号都行得通 */
+            font-size: 24px;
+            /* font-weight: 100; */
+            /* font-style: italic; */
+        }
+
+        /* 这是从本地获得的字体 */
+        h2:nth-of-type(2),
+        div:nth-of-type(2) {
+            font-family: 'rampart-one';
+            font-size: 24px;
+            /* font-weight: 100; */
+            /* font-style: italic; */
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>网络字体与本地字体</h1>
+    </header>
+    <main>
+        <h2>网络字体，font from net</h2>
+        <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur magnam, ducimus magni sunt quae
+            distinctio eligendi in nostrum voluptas voluptatem minus ratione impedit voluptatum, doloribus corporis odio
+            fugit. Quisquam, sunt.
+        </div>
+
+        <h2>本地字体，font from local</h2>
+        <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur magnam, ducimus magni sunt quae
+            distinctio eligendi in nostrum voluptas voluptatem minus ratione impedit voluptatum, doloribus corporis odio
+            fugit. Quisquam, sunt.
+        </div>
+
+        <h2 style="font-family: 'rampart-one', cursive;">补充</h2>
+        <ul>
+            <li>很多字体是不包含中文的，比如标题“网络字体”就没有特殊样式,“补充”的补也没有</li>
+        </ul>
+    </main>
+</body>
+
+</html>
