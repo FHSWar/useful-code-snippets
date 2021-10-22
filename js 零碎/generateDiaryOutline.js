@@ -7,7 +7,7 @@ const generateDiaryOutline = (year, path) => { createYearFolder(year, path) }
     year: 指定年份，生成对应年份的日记框子
     path: 指定路径，指定文件夹生成到对应路径
 */
-generateDiaryOutline(2022)
+generateDiaryOutline(2099)
 
 // 创建年份文件夹，输入了年份就用指定的年份，没有就用当年
 function createYearFolder(year = new Date().getFullYear(), path) {

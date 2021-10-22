@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+        }
+
+        .dialog {
+            position: relative;
+            display: inline-block;
+            margin-top: 200px;
+            margin-left: 500px;
+            border: 1px solid gray;
+            width: 300px;
+            height: 188px;
+            background-color: gainsboro;
+        }
+
+        .dialog::before {
+            content: '';
+            position: absolute;
+            top: 187px;
+            left: 50%;
+            transform: scaleX(1.5) translateX(-45%);
+            display: inline-block;
+            box-sizing: border-box; 
+            border-width: 25px;
+            border-style: solid;
+            border-color: gainsboro transparent transparent;
+            width: 50px;
+            height: 50px;
+            z-index: 2;
+        }
+
+        .dialog::after {
+            content: '';
+            position: absolute;
+            top: 188px;
+            left: 50%;
+            transform: scaleX(1.5) translateX(-45%);
+            display: inline-block;
+            box-sizing: border-box;
+            border-width: 25px;
+            border-style: solid;
+            border-color: gray transparent transparent;
+            width: 50px;
+            height: 50px;
+
+        }
+    </style>
+</head>
+
+<body>
+    长方形被边框填满的话，并不是四个三角形而是两个三角形和两个梯形，所以要用形变。
+    形变的话边框能做正方形旋转也能做，这两种利用伪元素的方式都比用图片或者加真元素强。
+    <div class="dialog"></div>
+</body>
+
+</html>
