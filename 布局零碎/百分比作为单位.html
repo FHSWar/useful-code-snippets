@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 百分比作为单位是可以继承的 -->
+    <style>
+        .level-one{
+            width: 1920px;
+            height: 1080px;
+            background-color: red;
+        }
+        .level-two{
+            width: 50%;
+            height: 50%;
+            background-color: green;
+        }
+        .level-three{
+            width: 50%;
+            height: 50%;
+            background-color: blue;
+        }
+        .level-four{
+            width: 50%;
+            height: 50%;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>试试百分比是否能继承</h1>
+    <div class="level-one">
+        <div  class="level-two">
+            <div  class="level-three">
+                <div  class="level-four"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input id="file" type="file">
+  <script>
+    /*
+     * https://www.zhangxinxu.com/study/201707/js-compress-image-before-upload.html，有更改
+     * input change -> reader onload -> img onload -> canvas context draw
+     * 通过 canvas 可以对读取的图片进行压缩，但是如果制定宽高没有比原图小很多，压缩后图片反而可能更大，因为本质是通过 canvas 以指定宽高把原图再画一遍
+     */
+    const eleFile = document.querySelector('#file');
+    // 压缩图片需要的一些元素和对象
+    const reader = new FileReader(), img = new Image();
+
+    // 输入框数据，这个是最先触发的
+    eleFile.addEventListener('change', function (event) {
+      console.log('传入的图片大小', event.target.files[0].size)
+      // 选择的文件对象, 缩放图片需要的canvas
+      let file = null;
+      file = event.target.files[0];
+      // 选择的文件是图片
+      if (file.type.indexOf("image") == 0) {
+        console.log('图片类型', file.type)
+        reader.readAsDataURL(file);
+      }
+    });
+    // 文件base64化，以便获知图片原始尺寸
+    reader.onload = function (e) {
+      img.src = e.target.result; // e.target.result 是 base64 格式的图片本身
+      console.log('reader.onload')
+    };
+
+    // base64地址图片加载完毕后
+    img.onload = function (e) {
+      console.log('img.onload')
+      console.log('this 就是 e.target', e.target === this)
+      // 图片原始尺寸
+      let originWidth = this.width;
+      let originHeight = this.height;
+      console.log('图片原始尺寸', originWidth, originHeight)
+      // 最大尺寸限制
+      let maxWidth = 300, maxHeight = 300;
+      // 目标尺寸 （图片不是正方形的要维持原有比例）
+      let targetWidth = originWidth, targetHeight = originHeight;
+      // 图片尺寸超过400x400的限制
+      if (originWidth > maxWidth || originHeight > maxHeight) {
+        // 这是为了压缩后宽高比与原图一致
+        if (originWidth / originHeight > maxWidth / maxHeight) {
+          // 更宽，按照宽度限定尺寸
+          targetWidth = maxWidth;
+          targetHeight = Math.round(maxWidth * (originHeight / originWidth));
+        } else {
+          targetHeight = maxHeight;
+          targetWidth = Math.round(maxHeight * (originWidth / originHeight));
+        }
+      }
+
+      const canvas = document.createElement('canvas');
+      const context = canvas.getContext('2d');
+      // canvas对图片进行缩放
+      canvas.width = targetWidth;
+      canvas.height = targetHeight;
+      // 清除画布
+      context.clearRect(0, 0, targetWidth, targetHeight);
+      // 图片压缩
+      context.drawImage(img, 0, 0, targetWidth, targetHeight);
+      // canvas转为blob并上传
+      canvas.toBlob(function (blob) {
+        console.log('压缩后图片大小', blob.size)
+      }, file.type || 'image/png');
+    };
+
+
+  </script>
+</body>
+
+</html>
