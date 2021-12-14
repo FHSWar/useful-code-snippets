@@ -1,9 +1,8 @@
 function getDepth (arr) {
-    let outerDepth = 0
+    if(arr.length === 0) return 0
+    let outerDepth = 1
     function calcDepth(arr, depth) {
-        !depth
-            ? depth = 1
-            : depth++
+        depth++
         for (const item of arr) {
             if (item.children.length !== 0) {
                 console.log('🐮！', depth)
@@ -12,7 +11,7 @@ function getDepth (arr) {
             }
         }
     }
-    calcDepth(arr)
+    calcDepth(arr, 1)
     return outerDepth
 }
 

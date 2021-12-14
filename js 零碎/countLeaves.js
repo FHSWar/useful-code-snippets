@@ -100,9 +100,5 @@ const arr = [
     }
 ]
 
-const res = []
-for (const obj of arr) {
-    res.push(countLeaves(obj))
-}
-console.log('res', JSON.stringify(res, null, 4))
-// console.log('res', res)
+arr.map(obj => countLeaves(obj))
+console.log('res', JSON.stringify(arr, null, 4))
