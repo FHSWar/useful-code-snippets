@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .info {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /*
+  CSS USED FOR THE TEMPLATE
+*/
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            color: #252631;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #efefef;
+        }
+
+        .desc {
+            max-width: 400px;
+            opacity: 0.6;
+            text-align: center;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="info">Device Info:
+        <mark id="info">Mobile</mark>
+    </div>
+    <p class="desc">Check if the device is bigger than 576 pixels. <br> Using media query inside
+        JavaScript.<br><code>(min-width: 576px)</code></p>
+    <script>
+        const outputElement = document.getElementById("info");
+
+        const smallDevice = window.matchMedia("(min-width: 576px)");
+
+        smallDevice.addListener(handleDeviceChange);
+        
+        // matchMedia
+        function handleDeviceChange(e) {
+            if (e.matches) {
+                console.log('wow matchMedia')
+                outputElement.textContent = "Bigger Than Mobile"
+            } else outputElement.textContent = "Mobile";
+        }
+
+        // Run it initially
+        handleDeviceChange(smallDevice);
+
+        // resize 执行次数太多了
+        function checkMediaQuery() {
+            // If the inner width of the window is greater then 768px
+            if (window.innerWidth > 768) {
+                // Then log this message to the console
+                console.log('Media Query Matched!')
+            }
+        }
+
+        // Add a listener for when the window resizes
+        window.addEventListener('resize', checkMediaQuery);
+    </script>
+</body>
+
+</html>
