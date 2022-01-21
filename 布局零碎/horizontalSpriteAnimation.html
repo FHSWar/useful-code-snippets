@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>horizontalSpriteAnimation</title>
+    <style>
+        /* 
+            to{background-position-x:-450px;} 就不行，方块图显示有点问题
+        */
+        div {
+            width: 50px;
+            height: 72px;
+            background-image: url(horizontalSprite.png);
+            background-size: cover;
+            animation: moveX 1s steps(10) infinite;
+        }
+
+        @keyframes moveX {
+            from {
+                background-position-x: 0px;
+            }
+
+            to {
+                background-position-x: -500px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>
