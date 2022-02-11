@@ -15,7 +15,7 @@ function calTotalCanBuy(money) {
     let capAmount = emptyBottleAmount = canBuyThisRound
     
     const soldReturn = capAmount*capPrice + emptyBottleAmount*emptyBottlePrice
-    console.log('soldReturn', soldReturn)
+    console.log('soldReturn, canBuyAmount', soldReturn, canBuyAmount)
     // 零钱攒几轮还能买，不能浪费
     if(smallChange+soldReturn > 2) calTotalCanBuy(smallChange+soldReturn)
 }
