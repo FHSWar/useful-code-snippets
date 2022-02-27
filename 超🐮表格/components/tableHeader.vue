@@ -58,6 +58,10 @@ export default {
 		border-top-left-radius: var(--container-border-radius);
 		border-top-right-radius: var(--container-border-radius);
 		z-index: 2;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
 	}
 	@include cell;
 	@include head-cell;
