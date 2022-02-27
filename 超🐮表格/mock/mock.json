@@ -1,0 +1,312 @@
+[
+	{
+		"useFunction": "99",
+		"extendsParams": "",
+		"children": [],
+		"prop": "mockProp1",
+		"fixed": false,
+		"minWidth": "160",
+		"label": "模拟表头名字",
+		"sortable": false,
+		"align": "center"
+	},
+	{
+		"useFunction": "99",
+		"extendsParams": "",
+		"children": [],
+		"prop": "mockProp2",
+		"fixed": false,
+		"minWidth": "160",
+		"label": "模拟表头名字",
+		"sortable": false,
+		"align": "center"
+	},
+	{
+		"useFunction": "99",
+		"extendsParams": "",
+		"children": [],
+		"prop": "mockProp3",
+		"fixed": false,
+		"minWidth": "160",
+		"label": "模拟表头名字",
+		"sortable": false,
+		"align": "center"
+	},
+	{
+		"useFunction": "99",
+		"extendsParams": "",
+		"children": [],
+		"prop": "mockProp4",
+		"fixed": false,
+		"minWidth": "160",
+		"label": "模拟表头名字",
+		"sortable": false,
+		"align": "center"
+	},
+	{
+		"useFunction": "99",
+		"extendsParams": "",
+		"children": [],
+		"prop": "mockProp5",
+		"fixed": false,
+		"minWidth": "160",
+		"label": "模拟表头名字",
+		"sortable": false,
+		"align": "center"
+	},
+	{
+		"useFunction": "99",
+		"extendsParams": "",
+		"children": [
+			{
+				"useFunction": "99",
+				"extendsParams": "",
+				"children": [],
+				"prop": "mockProp6",
+				"fixed": false,
+				"minWidth": "160",
+				"label": "模拟表头名字",
+				"sortable": false,
+				"align": "center"
+			},
+			{
+				"useFunction": "99",
+				"extendsParams": "",
+				"children": [],
+				"prop": "mockProp7",
+				"fixed": false,
+				"minWidth": "160",
+				"label": "模拟表头名字",
+				"sortable": false,
+				"align": "center"
+			},
+			{
+				"useFunction": "99",
+				"extendsParams": "",
+				"children": [],
+				"prop": "mockProp8",
+				"fixed": false,
+				"minWidth": "160",
+				"label": "模拟表头名字",
+				"sortable": false,
+				"align": "center"
+			},
+			{
+				"useFunction": "99",
+				"extendsParams": "",
+				"children": [],
+				"prop": "mockProp9",
+				"fixed": false,
+				"minWidth": "160",
+				"label": "模拟表头名字",
+				"sortable": false,
+				"align": "center"
+			},
+			{
+				"useFunction": "99",
+				"extendsParams": "",
+				"children": [],
+				"prop": "mockProp10",
+				"fixed": false,
+				"minWidth": "160",
+				"label": "模拟表头名字",
+				"sortable": false,
+				"align": "center"
+			},
+			{
+				"useFunction": "99",
+				"extendsParams": "",
+				"children": [],
+				"prop": "mockProp11",
+				"fixed": false,
+				"minWidth": "160",
+				"label": "模拟表头名字",
+				"sortable": false,
+				"align": "center"
+			},
+			{
+				"useFunction": "99",
+				"extendsParams": "",
+				"children": [],
+				"prop": "mockProp12",
+				"fixed": false,
+				"minWidth": "160",
+				"label": "模拟表头名字",
+				"sortable": false,
+				"align": "center"
+			},
+			{
+				"useFunction": "99",
+				"extendsParams": "",
+				"children": [],
+				"prop": "mockProp13",
+				"fixed": false,
+				"minWidth": "160",
+				"label": "模拟表头名字",
+				"sortable": false,
+				"align": "center"
+			},
+			{
+				"useFunction": "99",
+				"extendsParams": "",
+				"children": [],
+				"prop": "mockProp14",
+				"fixed": false,
+				"minWidth": "160",
+				"label": "模拟表头名字",
+				"sortable": false,
+				"align": "center"
+			},
+			{
+				"useFunction": "99",
+				"extendsParams": "",
+				"children": [],
+				"prop": "mockProp15",
+				"fixed": false,
+				"minWidth": "160",
+				"label": "模拟表头名字",
+				"sortable": false,
+				"align": "center"
+			},
+			{
+				"useFunction": "99",
+				"extendsParams": "",
+				"children": [],
+				"prop": "mockProp16",
+				"fixed": false,
+				"minWidth": "160",
+				"label": "模拟表头名字",
+				"sortable": false,
+				"align": "center"
+			},
+			{
+				"useFunction": "99",
+				"extendsParams": "",
+				"children": [],
+				"prop": "mockProp17",
+				"fixed": false,
+				"minWidth": "160",
+				"label": "模拟表头名字",
+				"sortable": false,
+				"align": "center"
+			},
+			{
+				"useFunction": "99",
+				"extendsParams": "",
+				"children": [],
+				"prop": "mockProp18",
+				"fixed": false,
+				"minWidth": "160",
+				"label": "模拟表头名字",
+				"sortable": false,
+				"align": "center"
+			},
+			{
+				"useFunction": "99",
+				"extendsParams": "",
+				"children": [],
+				"prop": "mockProp19",
+				"fixed": false,
+				"minWidth": "160",
+				"label": "模拟表头名字",
+				"sortable": false,
+				"align": "center"
+			},
+			{
+				"useFunction": "99",
+				"extendsParams": "",
+				"children": [],
+				"prop": "mockProp20",
+				"fixed": false,
+				"minWidth": "160",
+				"label": "模拟表头名字模拟换行模拟换行模拟表头名字模拟换行模拟换行",
+				"sortable": false,
+				"align": "center"
+			}
+		],
+		"prop": "2",
+		"fixed": false,
+		"minWidth": "160",
+		"label": "模拟表头名字",
+		"sortable": false,
+		"align": "center"
+	},
+	{
+		"useFunction": "99",
+		"extendsParams": "",
+		"children": [
+			{
+				"useFunction": "99",
+				"extendsParams": "",
+				"children": [],
+				"prop": "mockProp21",
+				"fixed": false,
+				"minWidth": "160",
+				"label": "模拟表头名字",
+				"sortable": false,
+				"align": "center"
+			},
+			{
+				"useFunction": "99",
+				"extendsParams": "",
+				"children": [],
+				"prop": "mockProp22",
+				"fixed": false,
+				"minWidth": "160",
+				"label": "模拟表头名字",
+				"sortable": false,
+				"align": "center"
+			},
+			{
+				"useFunction": "99",
+				"extendsParams": "",
+				"children": [],
+				"prop": "mockProp23",
+				"fixed": false,
+				"minWidth": "160",
+				"label": "对应代理人数",
+				"sortable": false,
+				"align": "center"
+			},
+			{
+				"useFunction": "99",
+				"extendsParams": "",
+				"children": [],
+				"prop": "mockProp24",
+				"fixed": false,
+				"minWidth": "160",
+				"label": "模拟表头名字",
+				"sortable": false,
+				"align": "center"
+			},
+			{
+				"useFunction": "99",
+				"extendsParams": "",
+				"children": [],
+				"prop": "mockProp25",
+				"fixed": false,
+				"minWidth": "160",
+				"label": "模拟表头名字",
+				"sortable": false,
+				"align": "center"
+			},
+			{
+				"useFunction": "99",
+				"extendsParams": "",
+				"children": [],
+				"prop": "mockProp26",
+				"fixed": false,
+				"minWidth": "160",
+				"label": "模拟表头名字",
+				"sortable": false,
+				"align": "center"
+			}
+		],
+		"prop": "3",
+		"fixed": false,
+		"minWidth": "160",
+		"label": "模拟表头",
+		"sortable": false,
+		"align": "center"
+	}
+]

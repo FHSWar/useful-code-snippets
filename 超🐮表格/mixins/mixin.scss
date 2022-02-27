@@ -1,0 +1,89 @@
+@mixin container {
+    margin: var(--container-margin);
+    border: var(--container-border-width) solid var(--cell-border-color);
+    width: var(--container-width);
+    overflow-x: scroll;
+}
+
+@mixin body {
+    &__body {
+		width: var(--table-width);
+	}
+}
+
+@mixin cell {
+    &__cell {
+		border: var(--cell-border-width) solid var(--cell-border-color);
+		border-collapse: collapse;
+		height: var(--cell-height);
+		padding-left: var(--cell-padding);
+		padding-right: var(--cell-padding);
+		font-size: var(--cell-font-size);
+	}
+}
+
+@mixin head-cell {
+    &__head-cell {
+		background-color: var(--th-background-color);
+		&--first-row {
+			border-top: none;
+		}
+        &--last-row-boundary {
+            border-bottom: none;
+        }
+	}
+}
+
+@mixin th-td {
+    &__head-cell, &__data-cell {
+		&--first-column {
+			position: -webkit-sticky;
+			position: sticky; // left 值通过计算属性获得
+			border-left: none;
+			overflow: visible;
+			// sticky 之后 border 没了，奇怪。用伪元素模拟好了。
+			&::before {
+				content: "";
+				width: 100%;
+				height: var(--cell-border-width);
+				top: -1px;
+				left: 0;
+
+			}
+			&::after {
+				content: "";
+				width: 1px;
+				height: 100%;
+				top: 0;
+				right: -1px;
+			}
+			&::before,
+			&::after {
+				position: absolute;
+				background-color: var(--cell-border-color);
+			}
+		}
+		&--first-column-right-edge {
+			height: 100%;
+			&::after {
+				background-color: var(--cell-edge-shadow);
+				box-shadow: var(--cell-edge-shadow-blur);
+				overflow: visible;
+			}
+		}
+		&--last-column {
+			border-right: none;
+		}
+		&--last-row {
+			border-bottom: none;
+		}
+		&--left-corner {
+			border-bottom: none;
+			border-left: none;
+		}
+		&--right-corner {
+			border-right: none;
+			border-bottom: none;
+		}
+	}
+}
