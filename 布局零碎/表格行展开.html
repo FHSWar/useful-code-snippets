@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    table {
+      width: 500px;
+      border: none;
+      border-top: 1px solid #EEEEEE;
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+    }
+
+    td,
+    th {
+      border: 1px solid #EEEEEE;
+      border-top: none;
+      text-align: left;
+      padding: 8px;
+      color: #363D41;
+      font-size: 14px;
+    }
+
+    tr {
+      background-color: #fff;
+      border: none;
+      cursor: pointer;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: flex-start;
+    }
+
+    tr:first-child:hover {
+      cursor: default;
+      background-color: #fff;
+    }
+
+    tr:hover {
+      background-color: #EEF4FD;
+    }
+
+    .expanded-row-content {
+      border-top: none;
+      display: grid;
+      grid-column: 1/-1;
+      justify-content: flex-start;
+      color: #AEB1B3;
+      font-size: 13px;
+      background-color: #fff;
+    }
+
+    .hide-row {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- https://medium.com/@chhikaradi/expandable-table-row-css-grid-54f4ff72fb56 -->
+  <h2> Expendable table </h2>
+
+  <table>
+    <tr>
+      <th>Company</th>
+      <th>Contact</th>
+      <th>Country</th>
+    </tr>
+    <tr onClick='toggleRow(this)'>
+      <td>Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+      <td>Germany</td>
+      <td class='expanded-row-content hide-row'>🐭</td>
+    </tr>
+    <tr onClick='toggleRow(this)'>
+      <td>Centro comercial Moctezuma</td>
+      <td>Francisco Chang</td>
+      <td>Mexico</td>
+      <td class='expanded-row-content hide-row'>🐮</td>
+    </tr>
+    <tr onClick='toggleRow(this)'>
+      <td>Ernst Handel</td>
+      <td>Roland Mendel</td>
+      <td>Austria</td>
+      <td class='expanded-row-content hide-row'>🐯</td>
+    </tr>
+
+  </table>
+
+  <script>
+    const toggleRow = (element) => {
+      element.getElementsByClassName('expanded-row-content')[0].classList.toggle('hide-row');
+      console.log(event);
+    }
+  </script>
+
+</body>
+
+</html>
