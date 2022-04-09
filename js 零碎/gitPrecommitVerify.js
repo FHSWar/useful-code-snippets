@@ -20,11 +20,16 @@ const checkDirFormat = (dirArr) => {
 	let haveWrongDirName = false
 	dirArr.forEach(dirname => {
 		if(dirname.toLowerCase() !== dirname) {
-			console.error(RED, `文件夹 ${dirname} 命名不符合规范，请改为 kebab case 格式。`)
+			console.error(RED, `文件夹命名不符合规范：${dirname}`)
 			haveWrongDirName = true
 		}
 	})
-	if(haveWrongDirName) process.exit(1)
+	if(haveWrongDirName) {
+		console.error(RED, '请改为 kebab case 格式！')
+		process.exit(1)
+	}else{
+		console.log(GREEN, '文件夹命名规范校验已完成。✨')
+	}
 }
 
 // 通过文件后缀判断是否是图片
@@ -71,9 +76,12 @@ gitStatus.stdout.on('data', (paths) => {
 				sizeTooLarge = true
 			}
 		})
-	sizeTooLarge
-		? console.error(RED, '请调整大文件代码结构！') && process.exit(1)
-		: console.log(GREEN, '文件体积校验已完成。✨')
+	if(sizeTooLarge){
+		console.error(RED, '请调整大文件代码结构！')
+		process.exit(1)
+	}else {
+		console.log(GREEN, '文件体积校验已完成。✨')
+	}
 
 	// 校验是图片的文件们
 	imgPathArr.forEach(path => {
@@ -84,11 +92,13 @@ gitStatus.stdout.on('data', (paths) => {
 			sizeTooLarge = true
 		}
 	})
-	sizeTooLarge
-		? console.error(RED, '请调整图片体积！') && process.exit(1)
-		: console.log(GREEN, '图片体积校验已完成。✨')
-
+	if(sizeTooLarge){
+		console.error(RED, '请调整图片体积！')
+		process.exit(1)
+	}else {
+		console.log(GREEN, '图片体积校验已完成。✨')
+	}
+	
 	done = true
 })
 loopWhile(() => !done)
-
