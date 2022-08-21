@@ -1,0 +1,1 @@
+System.register(["./index-legacy.d35017d4.js"],(function(e){"use strict";var t,n,r;return{setters:[function(e){t=e._,n=e.o,r=e.j}],execute:function(){e("default",t({},[["render",function(e,t){return n(),r("div",null," 集中监控室 ")}]]))}}}));
