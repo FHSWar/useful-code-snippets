@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <script>
+      const getLocation = () => {
+        console.log("123123");
+        window.navigator.geolocation.getCurrentPosition((position) => {
+          const { latitude, longitude } = position.coords;
+          console.log("latitude", latitude);
+          console.log("longitude", longitude);
+        });
+      };
+    </script>
+    <button style="cursor: pointer" onclick="getLocation()">
+      按钮
+    </button> -->
+    <div>
+      <button style="cursor: pointer" onclick="remove1()">body移除</button>
+      <button style="cursor: pointer" onclick="remove2()">祖先移除</button>
+      <button style="cursor: pointer" onclick="remove3()">父节点移除</button>
+      <div style="width: 200px; height: 200px; background-color: blue">
+        <div id="ancestor">
+          <div>
+            <div id="parent">
+              <div
+                id="child"
+                style="width: 100px; height: 100px; background-color: yellow"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const child = document.getElementById('child')
+      const remove1 = () => {
+        document.body.removeChild(child)
+      };
+      const remove2 = () => {
+        const ancestor = document.getElementById('ancestor')
+        ancestor.removeChild(child)
+      };
+      const remove3 = () => {
+        const parent = document.getElementById('parent')
+        parent.removeChild(child)
+      };
+    </script>
+  </body>
+</html>

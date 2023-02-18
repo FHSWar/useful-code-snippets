@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://salescmscdn.pa18.comnull/"></script>
+  </head>
+  <body>
+    万千世界
+    <script>
+      const promise = async () => {
+        // !这个导致load提前触发，必现
+        // return new Promise((resolve) => {
+        //   setTimeout(() => {
+        //     resolve(1);
+        //   }, 100);
+        // });
+
+        // !这个不导致load提前触发
+        return new Promise((resolve) => resolve(1))
+      };
+
+      const waitPromise = async () => {
+        const res = await promise();
+        console.log("res", res);
+
+        const img = document.createElement("img");
+        img.setAttribute(
+          "src",
+          "https://file.moyublog.com/d/file/2020-11-30/b230c7b03d085afb443fd57ecb9d12d5.jpg"
+        );
+        document.body.appendChild(img);
+      };
+
+      window.addEventListener("load", () => {
+        console.log("performance.timing");
+        console.log(
+          "performance.timing.domContentLoadedEventEnd",
+          performance.timing.domContentLoadedEventEnd
+        );
+        console.log(
+          "performance.timing.loadEventStart",
+          performance.timing.loadEventStart
+        );
+        console.log(
+          "差值",
+          performance.timing.loadEventStart -
+            performance.timing.domContentLoadedEventEnd
+        );
+      });
+
+      waitPromise();
+    </script>
+  </body>
+</html>
