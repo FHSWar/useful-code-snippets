@@ -12,14 +12,14 @@
     <script>
       const promise = async () => {
         // !这个导致load提前触发，必现
-        // return new Promise((resolve) => {
-        //   setTimeout(() => {
-        //     resolve(1);
-        //   }, 100);
-        // });
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve(1);
+          }, 100);
+        });
 
         // !这个不导致load提前触发
-        return new Promise((resolve) => resolve(1))
+        // return new Promise((resolve) => resolve(1))
       };
 
       const waitPromise = async () => {
