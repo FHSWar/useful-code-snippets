@@ -5,7 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="https://salescmscdn.pa18.comnull/"></script>
+    <!-- <script src="https://salescmscdn.pa18.comnull/"></script> -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+      defer
+    ></script>
   </head>
   <body>
     万千世界
@@ -13,9 +19,12 @@
       const promise = async () => {
         // !这个导致load提前触发，必现
         return new Promise((resolve) => {
+          // 主流程pending时长较长导致load事件提前触发
           setTimeout(() => {
             resolve(1);
           }, 100);
+          // 立刻resolve没有这个问题
+          // resolve();
         });
 
         // !这个不导致load提前触发
@@ -37,17 +46,16 @@
       window.addEventListener("load", () => {
         console.log("performance.timing");
         console.log(
-          "performance.timing.domContentLoadedEventEnd",
+          "domContentLoadedEventEnd ",
           performance.timing.domContentLoadedEventEnd
         );
         console.log(
-          "performance.timing.loadEventStart",
+          "loadEventStart",
           performance.timing.loadEventStart
         );
         console.log(
-          "差值",
-          performance.timing.loadEventStart -
-            performance.timing.domContentLoadedEventEnd
+          "loadTime",
+          performance.timing.loadEventStart - performance.timing.navigationStart
         );
       });
 
